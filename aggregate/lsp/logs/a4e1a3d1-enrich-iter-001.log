@@ -1,0 +1,17 @@
+[2026-09-16T17:44:42Z] === ENRICH ITERATION 1 START | repo=jpadilla/pyjwt sha=a4e1a3d1 ===
+[2026-09-16T17:44:42Z] [iter=1] PHASE START: enrich repo=jpadilla/pyjwt sha=a4e1a3d1 runlog=/home/runner/work/forx/forx/storage/aggregate/lsp/logs/a4e1a3d1-enrich-iter-001.log output=/home/runner/work/forx/forx/storage/aggregate/lsp/a4e1a3d1218b01c5806420b8f16d9308ac4adc30.nq.gz
+[2026-09-16T17:44:51Z] [iter=1] Step 1: Loading AST into disk-backed store mem_mb=79 MB
+[2026-09-16T17:44:54Z] [iter=1] AST store loaded triples=322073 load_secs=2 mem_mb=533 MB
+[2026-09-16T17:44:54Z] [iter=1] Step 2: Finding LSP targets mem_mb=533 MB
+[2026-09-16T17:44:55Z] [iter=1] LSP targets found call_sites=2349 imports=0 extends=0 implements=0 secs=1
+[2026-09-16T17:44:55Z] [iter=1] Step 2.7: Building position index (one-shot, shared across resolvers) mem_mb=533 MB
+[2026-09-16T17:44:57Z] [iter=1] Position index built positions=21364 nodes_with_types=28525 secs=1 mem_mb=533 MB
+[2026-09-16T17:44:57Z] [iter=1] Step 3: Starting LSP resolution mem_mb=533 MB already_completed_types=[] already_completed_files=0
+[2026-09-16T17:44:57Z] [iter=1] Resolving target type target_type=call_site count=2349
+[2026-09-16T17:46:13Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=1.5 files_done=3 resolved=347 errors=505 current=jwt/api_jwt.py
+[2026-09-16T17:46:44Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=2.0 files_done=5 resolved=493 errors=710 current=jwt/jwks_client.py
+[2026-09-16T17:47:26Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=2.7 files_done=8 resolved=651 errors=1003 current=jwt/api_jws.py
+[2026-09-16T17:47:52Z] [iter=1] Target type resolved target_type=call_site resolved=816 errors=1172 secs=175 mem_mb=533 MB
+[2026-09-16T17:47:54Z] [iter=1] Step 5: Writing final enrichment file triples=18032
+[2026-09-16T17:47:55Z] [iter=1] Enrichment file written path=/home/runner/work/forx/forx/storage/aggregate/lsp/a4e1a3d1218b01c5806420b8f16d9308ac4adc30.nq.gz size_kb=332
+[2026-09-16T17:47:55Z] [iter=1] PHASE END: enrich elapsed_s=193 elapsed_min=3.2 total_triples=18032
