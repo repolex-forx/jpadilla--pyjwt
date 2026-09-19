@@ -1,0 +1,7 @@
+[2026-09-19T19:32:52Z] === AST ITERATION 1 START | repo=jpadilla/pyjwt sha=3ebbb22f ===
+[2026-09-19T19:32:52Z] [iter=1] PHASE START: ast repo=jpadilla/pyjwt sha=3ebbb22f
+[2026-09-19T19:32:52Z] [iter=1] Building AST aggregate chunks
+[2026-09-19T19:33:04Z] [iter=1] AST chunks built count=1 triples=264758
+[2026-09-19T19:33:04Z] [iter=1] AST .complete marker written path=/home/runner/work/forx/forx/storage/aggregate/ast/3ebbb22f30f2b1b41727b269a08b427e9a85d6bb/.complete
+[2026-09-19T19:33:04Z] [iter=1] PHASE END: ast elapsed_s=12 elapsed_min=0.2
+[2026-09-19T19:33:04Z] [iter=1] Wrote .next-action.json next_action=enrich path=/home/runner/work/forx/forx/storage/aggregate/.next-action.json
