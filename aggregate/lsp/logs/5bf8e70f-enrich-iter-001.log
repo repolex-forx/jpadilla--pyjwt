@@ -1,0 +1,15 @@
+[2026-09-20T01:57:07Z] === ENRICH ITERATION 1 START | repo=jpadilla/pyjwt sha=5bf8e70f ===
+[2026-09-20T01:57:07Z] [iter=1] PHASE START: enrich repo=jpadilla/pyjwt sha=5bf8e70f runlog=/home/runner/work/forx/forx/storage/aggregate/lsp/logs/5bf8e70f-enrich-iter-001.log output=/home/runner/work/forx/forx/storage/aggregate/lsp/5bf8e70f26309b0a5ceda49ce0a7e97e89eee764.nq.gz
+[2026-09-20T01:57:07Z] [iter=1] Step 1: Loading AST into disk-backed store mem_mb=78 MB
+[2026-09-20T01:57:08Z] [iter=1] AST store loaded triples=160943 load_secs=1 mem_mb=311 MB
+[2026-09-20T01:57:08Z] [iter=1] Step 2: Finding LSP targets mem_mb=311 MB
+[2026-09-20T01:57:08Z] [iter=1] LSP targets found call_sites=1266 imports=0 extends=0 implements=0 secs=0
+[2026-09-20T01:57:09Z] [iter=1] Step 2.7: Building position index (one-shot, shared across resolvers) mem_mb=311 MB
+[2026-09-20T01:57:09Z] [iter=1] Position index built positions=10938 nodes_with_types=14568 secs=1 mem_mb=311 MB
+[2026-09-20T01:57:09Z] [iter=1] Step 3: Starting LSP resolution mem_mb=311 MB already_completed_types=[] already_completed_files=0
+[2026-09-20T01:57:09Z] [iter=1] Resolving target type target_type=call_site count=1266
+[2026-09-20T01:57:38Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=0.5 files_done=4 resolved=196 errors=296 current=tests/test_api_jws.py
+[2026-09-20T01:57:55Z] [iter=1] Target type resolved target_type=call_site resolved=418 errors=458 secs=46 mem_mb=311 MB
+[2026-09-20T01:57:57Z] [iter=1] Step 5: Writing final enrichment file triples=9427
+[2026-09-20T01:57:58Z] [iter=1] Enrichment file written path=/home/runner/work/forx/forx/storage/aggregate/lsp/5bf8e70f26309b0a5ceda49ce0a7e97e89eee764.nq.gz size_kb=165
+[2026-09-20T01:57:58Z] [iter=1] PHASE END: enrich elapsed_s=51 elapsed_min=0.8 total_triples=9427
