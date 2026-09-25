@@ -6,29 +6,27 @@ RDF knowledge graph data for [jpadilla/pyjwt](https://github.com/jpadilla/pyjwt)
 
 ## How to use this data
 
-The easiest way to get started is to install the [lexq](https://github.com/repolex-ai/lexq) query tool using [uv](https://docs.astral.sh/uv/getting-started/installation/).
-
-If you have uv installed, just copy/paste this into your terminal:
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
 
 ```bash
-uv tool install git+https://github.com/repolex-ai/lexq
+cargo install --git https://github.com/repolex-ai/rlex
 ```
 
-This installs lexq onto your system, in your user context. Verify the install:
+Verify the install:
 
 ```bash
-lexq --help
+rlex --help
 ```
 
-**lexq is designed to be used primarily by LLMs in a terminal.** Start up your favorite LLM and ask it to use the lexq tool. It's that easy!
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
 
 To load this repo's data:
 
 ```bash
-lexq download jpadilla/pyjwt
+rlex download jpadilla/pyjwt
 ```
 
-This will automatically download essential data files from the last parsed commit. Consult `lexq --moreinfo` for other options, including downloading multiple commits, blobs, etc.
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
 
 ## Data structure
 
@@ -80,6 +78,8 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 │   │   │   └── chunk-001.nq.gz
 │   │   ├── 8e4ef3cb47af5f37826b3c6f1a12c5000513fa14
 │   │   │   └── chunk-001.nq.gz
+│   │   ├── 8f28b4a6124830fcea400668840e645bb91e38a2
+│   │   │   └── chunk-001.nq.gz
 │   │   ├── 908ee84aeefb8126a94e48e88ba9916d9d2512b3
 │   │   │   └── chunk-001.nq.gz
 │   │   ├── 96c029a89f6311305ff93104db49c3c377072e1d
@@ -128,6 +128,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 │   │   ├── 83ff831a4d11190e3a0bed781da43f8d84352653.nq.gz
 │   │   ├── 868cf4ab2ca5a0a39da40e5a14dd740b203662b2.nq.gz
 │   │   ├── 8e4ef3cb47af5f37826b3c6f1a12c5000513fa14.nq.gz
+│   │   ├── 8f28b4a6124830fcea400668840e645bb91e38a2.nq.gz
 │   │   ├── 908ee84aeefb8126a94e48e88ba9916d9d2512b3.nq.gz
 │   │   ├── 96c029a89f6311305ff93104db49c3c377072e1d.nq.gz
 │   │   ├── 98620ab2a396a5c887a494259d49552c2093e1ad.nq.gz
@@ -183,6 +184,8 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 │       ├── 868cf4ab2ca5a0a39da40e5a14dd740b203662b2
 │       │   └── chunk-001.nq.gz
 │       ├── 8e4ef3cb47af5f37826b3c6f1a12c5000513fa14
+│       │   └── chunk-001.nq.gz
+│       ├── 8f28b4a6124830fcea400668840e645bb91e38a2
 │       │   └── chunk-001.nq.gz
 │       ├── 908ee84aeefb8126a94e48e88ba9916d9d2512b3
 │       │   └── chunk-001.nq.gz
@@ -274,11 +277,15 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 13db2b38c1b4318b3c681ecf864d23340c14ce88.nq.gz
     ├── 1408af28b1396a0631240765d080b27179fd1d53.nq.gz
     ├── 144cf63969cda48c7b4c9056962a23ec63c742d4.nq.gz
+    ├── 147dce3f148c6a2cd1eae27aa21e1ed9671e1bad.nq.gz
     ├── 14b8a8d7890f178412f57d578addb308bc97ee26.nq.gz
     ├── 152c23726da318ca41ec0aa4676abd49950634d7.nq.gz
     ├── 1672acf68e964323115314faba584526ffdf5eb6.nq.gz
+    ├── 167f78e1cebc3480a0677976da30921df07b4fb5.nq.gz
     ├── 1682ae8073cda04526c483bac76a83e456b45141.nq.gz
+    ├── 16b4f6d1cfcbdf3d280b3cef0a17df9e9f3a13db.nq.gz
     ├── 16cae0662e48f605db54cdf86ba1008dba5a4003.nq.gz
+    ├── 1719933ce784720a46690ae51dd70624dd0b4530.nq.gz
     ├── 177f5ff5572b1c61b9696696b2132df75b15e77b.nq.gz
     ├── 17b0d8ace81b7b3596ee1d9b3018a14a6e5d7540.nq.gz
     ├── 17ffa8446464b619a0d8ca0cea9c302020f084cc.nq.gz
@@ -301,16 +308,9 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 20790a0a2ac2a2baa48bb72f62fcb60a8e51ac51.nq.gz
     ├── 211f0dfdb46f2ab2f08ffc73dde5e57087d5d69b.nq.gz
     ├── 21a3c1a51f43c840dab2650599a5d31d6019d361.nq.gz
-    ├── 21fac3fe7dfc54dd743c709a6a47471791ee7fba.nq.gz
-    ├── 221e2e2fa670dd0d56e03cd88d7f7e068a66bd48.nq.gz
-    ├── 223b22be3dc78678f4e0bf6c5d086d01b30277b3.nq.gz
-    ├── 2255db811d622270e0f94a51f4d78d350b06295d.nq.gz
-    ├── 22623484ce57a9201132158cbc07dec7aa3ec09b.nq.gz
-    ├── 229b2ebbbc901935f951a93de7dea83f4d0524b5.nq.gz
-    ├── 22aedc6edbac6acc6523782a74af52d0c34efbf9.nq.gz
-    └── 2432563056a460c59d6e615968df456da3ec49cd.nq.gz
+    └── 21fac3fe7dfc54dd743c709a6a47471791ee7fba.nq.gz
 
-74 directories, 200 files
+76 directories, 200 files
 ```
 
 | Directory | What it contains |
@@ -324,10 +324,11 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 | `branch/` | Branch metadata. |
 | `tag/` | Tag metadata. |
 | `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
 
 ## Source repository
 
 [jpadilla/pyjwt](https://github.com/jpadilla/pyjwt)
 
 ---
-*Parsed on 2026-09-22 by [repolex](https://repolex.ai)*
+*Parsed on 2026-09-25 by [repolex](https://repolex.ai)*
